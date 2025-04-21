@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Next - Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Creative Next</div>
+        <form id="searchForm" onsubmit="return false;"> <!-- Prevent form submission -->
+            <input type="text" id="searchInput" placeholder="Search for products..." required>
+        </form>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <nav>
+            <ul>
+                <li><a href="login.html" id="loginBtn">Login</a></li>
+            </ul>
+        </nav>
+        <button id="cartBtn" type="button">View Cart (2)</button>
+    </header>
+    <main>
+        <h1>Welcome to Creative Next</h1>
+        <h2>Featured Products</h2>
+        <div id="product-grid" class="product-grid"></div> <!-- Empty div for products -->
+        <h2>Search Results</h2>
+        <div id="results"></div> <!-- Empty div for search results -->
+        <div><a href="addProduct.html">Add a New Product</a></div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Creative Next. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="cart.js"></script> <!-- Include cart.js for cart functionality -->
+    <script>
+        document.getElementById('cartBtn').addEventListener('click', function() {
+            window.location.href = 'cart.html'; // Redirect to cart page
+        });
+        // Call fetchProducts when the page loads
+        window.onload = function() {
+            fetchProducts();
+            updateCartDisplay();
+            // addtocart();
+        };
+         
+    </script>
+</body>
+</html>
